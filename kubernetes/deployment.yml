@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: delivery
+  namespace: istio-cb-ns
   labels:
     app: delivery
 spec:
@@ -16,7 +17,7 @@ spec:
     spec:
       containers:
         - name: delivery
-          image: username/delivery:latest
+          image: 052937454741.dkr.ecr.ap-southeast-1.amazonaws.com/user14-cna-delivery:latest
           ports:
             - containerPort: 8080
           readinessProbe:
